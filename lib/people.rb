@@ -431,6 +431,26 @@ module People
         last   = $3;
         parsed = true
         parse_type = 11;
+      elsif name.match( /^([#{@nc}]+) ([A-Za-z])\.? (.*)$/i )
+        first  = $1;
+        middle = $2;
+        last   = $3;
+        parsed = true
+        parse_type = 11;
+        # Abaid Ullah A. Choudry
+      elsif name.match( /^([#{@nc}]+) (.* [A-Za-z])\.? (.*)$/i )
+        first  = $1;
+        middle = $2;
+        last   = $3;
+        parsed = true
+        parse_type = 11;
+        # Abdel Kader El Tal
+      elsif name.match( /^([#{@nc}]+) ([^ ]*)\.? (.*)$/i )
+        first  = $1;
+        middle = $2;
+        last   = $3;
+        parsed = true
+        parse_type = 11;
       end
 
       last.gsub!( /;/, "" )
